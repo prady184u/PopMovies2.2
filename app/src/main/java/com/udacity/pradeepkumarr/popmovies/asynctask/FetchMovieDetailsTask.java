@@ -28,9 +28,8 @@ import java.util.ArrayList;
 public class FetchMovieDetailsTask extends AsyncTask<String, Void, ArrayList<Movie>> {
 
     private final String LOG_TAG = FetchMovieDetailsTask.class.getSimpleName();
-    String metric = "metric";
-    String mode = "json";
-    String appid = BuildConfig.TMDBAPIKEY;
+
+    private String appid = BuildConfig.TMDBAPIKEY;
     final String forecastBaseURL = "http://api.themoviedb.org/3/discover/movie?";
     final String QUERY_SORT_BY="sort_by";
     final String QUERY_APP_ID = "api_key";
@@ -48,8 +47,11 @@ public class FetchMovieDetailsTask extends AsyncTask<String, Void, ArrayList<Mov
         }
         //http://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=API_KEY
 
-        Uri moviesListUri = Uri.parse(forecastBaseURL).buildUpon()
-                .appendQueryParameter(QUERY_SORT_BY, params[0])
+        //code change for new URL post April 8
+        //http://api.themoviedb.org/3/movie/popular?api_key=APIkey
+
+        Uri moviesListUri = Uri.parse(MOVIES_BASE_URL.concat(params[0]).concat("?")).buildUpon()
+                //.appendQueryParameter(QUERY_SORT_BY, params[0])
                 .appendQueryParameter(QUERY_APP_ID, appid).build();
 
 
