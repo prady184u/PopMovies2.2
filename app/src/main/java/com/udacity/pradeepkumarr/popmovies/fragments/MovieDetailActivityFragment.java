@@ -191,13 +191,14 @@ public class MovieDetailActivityFragment extends Fragment {
 
             }
 
+
             trailers = new ArrayList<>();
             reviews = new ArrayList<>();
 
 
             if(MovieUtil.isOnline(getActivity()) ) {
                 if(mMovie == null)
-                   return rootView;
+                    return rootView;
 
                 new MovieReviewTask().execute(mMovie.getId());
                 new MovieTrailerTask().execute(mMovie.getId());
@@ -207,13 +208,13 @@ public class MovieDetailActivityFragment extends Fragment {
             }
 
 
-            trailerAdapter = new TrailerAdapter(getActivity(), trailers);
-            trailerListView.setAdapter(trailerAdapter);
-            reviewAdapter = new ReviewAdapter(getActivity(), reviews);
-            reviewListView.setAdapter(reviewAdapter);
-
 
         }
+
+        trailerAdapter = new TrailerAdapter(getActivity(), trailers);
+        trailerListView.setAdapter(trailerAdapter);
+        reviewAdapter = new ReviewAdapter(getActivity(), reviews);
+        reviewListView.setAdapter(reviewAdapter);
 
 
         return rootView;
