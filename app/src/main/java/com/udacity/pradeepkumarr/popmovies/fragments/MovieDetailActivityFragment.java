@@ -265,18 +265,20 @@ public class MovieDetailActivityFragment extends Fragment {
 
 
     private void loadMovieInfo() {
+        if(mMovie!=null ){
+            synopsisTV.setText(mMovie.getOverview());
+            release_dateTV.setText(mMovie.getRelease_date());
+            titleTV.setText(mMovie.getTitle());
+            ratingTV.setText(Double.toString(mMovie.getVote_average()));
 
-        synopsisTV.setText(mMovie.getOverview());
-        release_dateTV.setText(mMovie.getRelease_date());
-        titleTV.setText(mMovie.getTitle());
-        ratingTV.setText(Double.toString(mMovie.getVote_average()));
 
+            Picasso.with(getContext())
+                    .load(image_poster_url +mMovie.getPoster_path())
+                    .placeholder(R.drawable.popmovies)
+                    .fit()
+                    .into(posterimage);
 
-        Picasso.with(getContext())
-                .load(image_poster_url +mMovie.getPoster_path())
-                .placeholder(R.drawable.popmovies)
-                .fit()
-                .into(posterimage);
+        }
 
        /* Picasso.with(getContext())
                 .load(image_poster_url +backgroundPosterPath)
