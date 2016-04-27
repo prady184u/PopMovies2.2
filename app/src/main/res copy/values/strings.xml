@@ -21,16 +21,16 @@
     </string-array>
     <!-- values-->
     <string-array name="pref_units_result_alias">
-        <item>popularity.desc</item>
-        <item>vote_average.desc</item>
+        <item>popular</item>
+        <item>top_rated</item>
         <item>fav</item>
     </string-array>
 
-    <string name="pref_result_default" translatable="false">popularity.desc</string>
+    <string name="pref_result_default" translatable="false">popular</string>
 
-    <string name="pref_result_popular" translatable="false">popularity.desc</string>
+    <string name="pref_result_popular" translatable="false">popular</string>
 
-    <string name="pref_result_highrtd" translatable="false">vote_average.desc</string>
+    <string name="pref_result_highrtd" translatable="false">top_rated</string>
     <string name="pref_result_fav" translatable="false">fav</string>
 
 
