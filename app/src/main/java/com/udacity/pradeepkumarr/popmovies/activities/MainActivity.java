@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.udacity.pradeepkumarr.popmovies.R;
 import com.udacity.pradeepkumarr.popmovies.domain.Movie;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements MovieMainFragment
         /*   getSupportFragmentManager().beginTransaction()
                     .replace(R.id.details_fragment_container, new MovieDetailActivityFragment())
                     .commit();*/
+            Toast.makeText(this, "Please select a movie to view Details", Toast.LENGTH_LONG).show();
 
         } else {
             mTwoPane = false;
