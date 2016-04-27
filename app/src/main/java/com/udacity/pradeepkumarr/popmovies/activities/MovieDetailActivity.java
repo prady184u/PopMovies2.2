@@ -39,19 +39,20 @@ public class MovieDetailActivity extends AppCompatActivity {
                     .add(R.id.details_fragment_container, fragment)
                     .commit();
 
-            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-            setSupportActionBar(toolbar);
 
-            FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-            fab.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Snackbar.make(view, "Movie Details!! More features like trailers and reviews added in Project II", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-                }
-            });
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Movie Details!! More features like trailers and reviews added in Project II", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
      }
 
